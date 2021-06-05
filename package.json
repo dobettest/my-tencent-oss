@@ -1,0 +1,47 @@
+{
+  "name": "tencent-oss",
+  "version": "2.0.0",
+  "description": "OSS plugin for egg",
+  "eggPlugin": {
+    "name": "tencent-oss"
+  },
+  "files": [
+    "app",
+    "config",
+    "lib",
+    "app.js"
+  ],
+  "keywords": [
+    "egg",
+    "egg-plugin",
+    "eggPlugin",
+    "oss",
+    "tencent"
+  ],
+  "dependencies": {
+    "cos-nodejs-sdk-v5": "^2.9.18"
+  },
+  "devDependencies": {
+    "autod": "^3.0.1",
+    "egg": "^2.11.2",
+    "egg-bin": "^4.9.0",
+    "egg-mock": "^3.20.1",
+    "eslint": "^5.6.1",
+    "eslint-config-egg": "^7.1.0",
+    "is-type-of": "^1.2.1"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "scripts": {
+    "autod": "autod",
+    "lint": "eslint .",
+    "test": "npm run lint -- --fix && npm run test-local",
+    "test-local": "egg-bin test",
+    "cov": "egg-bin cov",
+    "pkgfiles": "egg-bin pkgfiles",
+    "ci": "egg-bin pkgfiles --check && npm run lint && npm run cov"
+  },
+  "author": "Gm",
+  "license": "MIT"
+}
