@@ -1,6 +1,6 @@
 {
   "name": "tencent-oss",
-  "version": "2.0.0",
+  "version": "0.0.1",
   "description": "OSS plugin for egg",
   "eggPlugin": {
     "name": "tencent-oss"
