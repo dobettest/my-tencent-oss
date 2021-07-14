@@ -9,5 +9,5 @@ module.exports = {
    */
   get tencentOss() {
     return this.app.tencentOss;
-  },
+  }
 };

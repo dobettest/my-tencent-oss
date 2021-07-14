@@ -1,14 +1,12 @@
 # my-tencent-oss
-[![NPM version][npm-image]][npm-url]
-
-[npm-url]: https://npmjs.org/package/my-tencent-oss
+[npm-url]: https://www.npmjs.com/package/tencent-oss
 
 Egg's tencent-oss plugin.
 
 ## Install
 
 ```bash
-$ npm i my-tencent-oss --save
+$ npm i tencent-oss --save
 ```
 
 ## Configuration
@@ -26,10 +24,48 @@ exports.tencentOss = {
 
 ```js
 // {app_root}/config/config.default.js
-exports.tencentOss = {
-    client: {
-      SecretId: 'AKIDd4FBsKHgeP1PcaEkxyjETSCgusd8NxJQ',
-      SecretKey: '1nKhogIeldGdp69xXsypQ1Tm1YFk02qP'
+  config.tencentOss = {
+    clients: {
+      cos1: {
+        credential: {
+          SecretId: '',
+          SecretKey: ''
+        }
+      },
+      cos2: {
+        sts: {
+          clientConfig: {
+            credential: {
+              secretId: 'AKIDd4FBsKHgeP1PcaEkxyjETSCgusd8NxJQ',
+              secretKey: '1nKhogIeldGdp69xXsypQ1Tm1YFk02qP'
+            },
+            region: "ap-guangzhou",
+            profile: {
+              httpProfile: {
+                endpoint: "sts.tencentcloudapi.com",
+              },
+            },
+          },
+          "Name": "access",
+          Policy: {
+            "version": "2.0",
+            "statement": [
+              {
+                "effect": "allow",
+                "action": [
+                  "cos:PutObject",
+                  "cos:GetObject",
+                  "cos:HeadObject",
+                  "cos:OptionsObject",
+                  "cos:ListParts",
+                  "cos:GetObjectTagging"
+                ],
+                "resource": "*"
+              }
+            ]
+          }
+        }
+      }
     }
   };
 ```
