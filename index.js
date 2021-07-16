@@ -1,5 +1,5 @@
-const { createSingleon } = require('./lib/oss')
-const { isObject } = require("../utils")
+const { createSingleon } = require('./utils/oss')
+const { isObject } = require("./utils")
 function tencentOSS() {
     this.clients = {};
 }
@@ -17,7 +17,7 @@ module.exports = function (config) {
     let keys = Object.keys(config);
     let oss = new tencentOSS()
     keys.forEach(key => {
-        oss.clients[key] = createSingleon(keys[key])
+        oss.clients[key] = createSingleon(config[key])
     })
     return async function (req, res, next) {
         req.tencentOSS = oss;
