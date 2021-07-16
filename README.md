@@ -69,7 +69,21 @@ exports.tencentOss = {
     }
   };
 ```
-
+### express
+```js
+//configure
+const oss=require("tencent-oss");
+app.use(new oss({
+        cos1: {
+        credential: {
+          SecretId: '',
+          SecretKey: ''
+        }
+      }
+}))
+//use
+req.tencentOSS.get("cos1")
+```
 ## Questions & Suggestions
 
 Please open an issue [here](https://github.com/dobettest/my-tencent-oss.git/issues).
