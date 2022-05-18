@@ -36,8 +36,8 @@ exports.tencentOss = {
         sts: {
           clientConfig: {
             credential: {
-              secretId: 'AKIDd4FBsKHgeP1PcaEkxyjETSCgusd8NxJQ',
-              secretKey: '1nKhogIeldGdp69xXsypQ1Tm1YFk02qP'
+              secretId: '',
+              secretKey: ''
             },
             region: "ap-guangzhou",
             profile: {
